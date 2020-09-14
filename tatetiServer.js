@@ -2,8 +2,19 @@ const WebSocket = require('ws')
 var fs = require('fs');
 const { exec } = require("child_process");
 const request = require('request')
+const express = require('express');
 
-const wss = new WebSocket.Server({ port: process.env.PORT || 5000 })
+// Heroku necesita todo esto
+const PORT = process.env.PORT || 5000;
+const INDEX = '/index.html';
+
+const server = express()
+  .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
+  .listen(PORT, () => console.log(`Listening on ${PORT}`));
+
+//
+
+const wss = new WebSocket.Server({ server })
 
 const partidas = {}
 

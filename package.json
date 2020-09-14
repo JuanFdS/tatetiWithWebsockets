@@ -14,7 +14,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bufferutil": "^4.0.1",
+    "express": "^4.17.1",
     "request": "^2.88.2",
+    "utf-8-validate": "^5.0.2",
     "websocket": "^1.0.32",
     "ws": "^7.3.1"
   }
