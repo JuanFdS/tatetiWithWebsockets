@@ -3,7 +3,7 @@ var fs = require('fs');
 const { exec } = require("child_process");
 const request = require('request')
 
-const wss = new WebSocket.Server({ port: 8080 })
+const wss = new WebSocket.Server({ port: process.env.PORT || 5000 })
 
 const partidas = {}
 
